@@ -8,10 +8,10 @@ const Home = () => {
 
   return (
     <div>
-      <div className="max-w-[1440px] mx-auto px-4">
+      <div className="">
         <SwiperHome />
 
-        <div>
+        <div className="max-w-[1440px] mx-auto px-4">
           <h2 className="text-3xl md:text-4xl text-center font-semibold mb-10">
             Popular Skills
           </h2>
