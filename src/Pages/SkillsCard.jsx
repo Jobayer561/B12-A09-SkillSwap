@@ -27,8 +27,7 @@ const SkillsCard = ({ skill, index }) => {
                 {price} tk
               </div>
               <div className="flex items-center gap-1 text-[#FF8811] px-4 py-2 w-1/3 bg-[#FFF0E1] justify-center font-semibold rounded-md">
-                <FaStar />
-                {rating}
+                ⭐{rating}
               </div>
             </div>
             <Link to={`/skill/${skillId}`} className="btn btn-primary mt-5">

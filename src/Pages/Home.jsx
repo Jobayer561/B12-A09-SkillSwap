@@ -14,7 +14,7 @@ const Home = () => {
         <SwiperHome />
 
         <div className="max-w-[1440px] mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl text-center font-semibold my-10">
+          <h2 className="text-2xl md:text-4xl text-center font-bold my-10">
             Popular Skills
           </h2>
           {loading ? (
