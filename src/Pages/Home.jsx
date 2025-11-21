@@ -4,7 +4,7 @@ import UseSkill from "../hooks/UseSkill";
 import SkillsCard from "./SkillsCard";
 import TopRatedProviders from "./TopRatedProviders";
 import HowItWork from "./HowItWork";
-
+import SuccessStories from "./SuccessStories";
 const Home = () => {
   const { skills, loading } = UseSkill();
 
@@ -32,7 +32,8 @@ const Home = () => {
             </div>
           )}
           <TopRatedProviders />
-          <HowItWork/>
+          <HowItWork />
+          <SuccessStories />
         </div>
       </div>
     </div>
