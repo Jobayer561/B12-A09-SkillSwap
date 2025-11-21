@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap");
+
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark, cupcake, forest, cyberpunk, synthwave;
+}
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #403f3f;
+  --color-secondary: #d72050;
+  --color-base-200: #f3f3f3;
+  --color-base-300: #e7e7e7;
+  --color-accent: #706f6f;
+}
+.logo {
+  font-family: "Momo Trust Display", sans-serif;
+}
+.active {
+  color: #10b981;
+  text-decoration: underline;
+}

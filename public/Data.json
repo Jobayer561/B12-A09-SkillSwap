@@ -1,0 +1,122 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 5000,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners focusing on chords, rhythm, and basic songs.",
+    "image": "https://images.unsplash.com/photo-1516924962500-2b4b3b99ea02",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 3000,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers to improve fluency and confidence.",
+    "image": "https://images.unsplash.com/photo-1543165796-5426273eaab3",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Web Development",
+    "providerName": "Jhankar Mahbub",
+    "providerEmail": "jhankar@skillswap.com",
+    "price": 5500,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Learn HTML, CSS, JavaScript, and React by building real-world web applications.",
+    "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Digital Painting",
+    "providerName": "Nina Roy",
+    "providerEmail": "nina@skillswap.com",
+    "price": 2500,
+    "rating": 4.7,
+    "slotsAvailable": 2,
+    "description": "Learn the fundamentals of digital painting, color theory, and character illustration.",
+    "image": "https://plus.unsplash.com/premium_photo-1676322399274-ea1d64dfc2af",
+    "category": "Art & Design"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Photography",
+    "providerName": "John Peterson",
+    "providerEmail": "john@skillswap.com",
+    "price": 3050,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Master DSLR photography techniques, lighting, and composition for professional results.",
+    "image": "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4",
+    "category": "Photography"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Python Programming",
+    "providerName": "Mehedi Hasan",
+    "providerEmail": "mehedi@skillswap.com",
+    "price": 3600,
+    "rating": 4.5,
+    "slotsAvailable": 6,
+    "description": "Start coding with Python — from basic syntax to building small projects.",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4",
+    "category": "Programming"
+  },
+  {
+    "skillId": 7,
+    "skillName": "Public Speaking",
+    "providerName": "Rina Das",
+    "providerEmail": "rina@skillswap.com",
+    "price": 1800,
+    "rating": 4.4,
+    "slotsAvailable": 5,
+    "description": "Improve your stage presence, articulation, and confidence in public speaking.",
+    "image": "https://images.unsplash.com/photo-1544531586-fde5298cdd40",
+    "category": "Soft Skills"
+  },
+  {
+    "skillId": 8,
+    "skillName": "Baking and Cake",
+    "providerName": "Emily Carter",
+    "providerEmail": "emily@skillswap.com",
+    "price": 2200,
+    "rating": 4.7,
+    "slotsAvailable": 4,
+    "description": "Learn the art of baking delicious cakes and decorating them like a professional.",
+    "image": "https://images.unsplash.com/photo-1597528662465-55ece5734101",
+    "category": "Culinary Arts"
+  },
+  {
+    "skillId": 9,
+    "skillName": "Graphic Design",
+    "providerName": "Anik Paul",
+    "providerEmail": "anik@skillswap.com",
+    "price": 3900,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Create eye-catching posters, social media graphics, and presentations using Canva.",
+    "image": "https://images.unsplash.com/photo-1649091245823-18be815da4f7",
+    "category": "Design"
+  },
+  {
+    "skillId": 10,
+    "skillName": "Yoga for Beginners",
+    "providerName": "Lina Rahman",
+    "providerEmail": "lina@skillswap.com",
+    "price": 2700,
+    "rating": 4.9,
+    "slotsAvailable": 6,
+    "description": "Relax your body and mind with yoga sessions focused on posture, flexibility, and breathing.",
+    "image": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b",
+    "category": "Health & Fitness"
+  }
+]
