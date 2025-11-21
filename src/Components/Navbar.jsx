@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.webp";
 const Navbar = () => {
-  let a = 0;
+  let a = 1;
   return (
     <div className="bg-white  border-b-2 border-gray-300">
       <div className="navbar max-w-[1460px] mx-auto px-4">
