@@ -23,10 +23,10 @@ const SkillsCard = ({ skill, index }) => {
             <h2 className="card-title">{skillName}</h2>
 
             <div className="flex justify-between">
-              <div className="flex items-center gap-1 text-[#00D390] px-2 py-2 w-1/4 bg-[#F1F5E8] justify-center font-semibold rounded-md">
-                {price}tk
+              <div className="flex items-center gap-1 text-[#00D390] px-4 py-2 w-1/3 bg-[#F1F5E8] justify-center font-semibold rounded-md whitespace-nowrap">
+                {price} tk
               </div>
-              <div className="flex items-center gap-1 text-[#FF8811] px-2 py-2 w-1/4 bg-[#FFF0E1] justify-center font-semibold rounded-md">
+              <div className="flex items-center gap-1 text-[#FF8811] px-4 py-2 w-1/3 bg-[#FFF0E1] justify-center font-semibold rounded-md">
                 <FaStar />
                 {rating}
               </div>

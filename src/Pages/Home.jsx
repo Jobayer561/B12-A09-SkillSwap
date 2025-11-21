@@ -2,6 +2,8 @@ import React from "react";
 import SwiperHome from "./SwiperHome";
 import UseSkill from "../hooks/UseSkill";
 import SkillsCard from "./SkillsCard";
+import TopRatedProviders from "./TopRatedProviders";
+import HowItWork from "./HowItWork";
 
 const Home = () => {
   const { skills, loading } = UseSkill();
@@ -29,6 +31,8 @@ const Home = () => {
               ))}
             </div>
           )}
+          <TopRatedProviders />
+          <HowItWork/>
         </div>
       </div>
     </div>
