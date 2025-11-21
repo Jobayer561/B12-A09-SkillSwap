@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.webp";
 const Navbar = () => {
-  let a = 1;
+  let a = 0;
   return (
     <div className="bg-white  border-b-2 border-gray-300">
       <div className="navbar max-w-[1460px] mx-auto px-4">
@@ -77,7 +77,7 @@ const Navbar = () => {
             </>
           ) : (
             <div className="flex gap-2">
-              <Link class="btn btn-secondary">logIn</Link>
+              <Link class="btn btn-secondary">LogIn</Link>
               <Link className="btn btn-accent text-white">Sign Up</Link>
             </div>
           )}
