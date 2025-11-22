@@ -1,16 +1,84 @@
-# React + Vite
+# Skill Swap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Skill Swap is a modern skill-sharing platform where users can explore different skills, view detailed information, and manage their profiles. It uses Firebase authentication and offers a clean, responsive UI with smooth interactions.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+🔗 **Live URL:** https://b12-a9-skillswap.netlify.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📌 Purpose of the Project
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The project is built to help learners discover new skills and gain knowledge. It includes a user system with login, registration, profile updates, and password recovery.
+
+---
+
+## ⭐ Key Features
+
+### 🔹 Skill Cards
+
+- Shows skill cards with images, price, rating, and skill name.
+- Each card contains a **View Details** button.
+
+### 🔹 Skill Details Page
+
+- Displays detailed information when a user selects a skill.
+
+### 🔹 User Authentication
+
+- Login and Registration
+- Forgot Password
+- Update Profile
+- Firebase Email & Password Auth
+
+### 🔹 User Profile
+
+- View profile picture, name, and email
+- Edit and update profile
+
+### 🔹 UI / UX Enhancements
+
+- Fully responsive (Mobile, Tablet, Desktop)
+- Swiper slider on homepage
+- Loading spinners
+- Toast notifications
+- Animations with animate.css
+
+---
+
+## 🛠️ Tech Stack
+
+### **Frontend**
+
+- React
+- React Router
+- Tailwind CSS
+- DaisyUI (if used)
+- Animate.css
+- Swiper.js
+
+### **Backend Services**
+
+- Firebase Authentication
+- Firebase Hosting (optional)
+
+---
+
+## 📦 NPM Packages Used
+
+"@tailwindcss/vite": "^4.1.16"
+"animate.css": "^4.1.1"
+"axios": "^1.13.1"
+"firebase": "^12.6.0"
+"icons": "^1.0.0"
+"react": "^19.2.0"
+"react-dom": "^19.1.1"
+"react-hot-toast": "^2.6.0"
+"react-icons": "^5.5.0"
+"react-router": "^7.9.5"
+"react-spinners": "^0.17.0"
+"swiper": "^12.0.3"
+"tailwindcss": "^4.1.16"
