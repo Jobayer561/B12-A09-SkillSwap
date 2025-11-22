@@ -4,10 +4,12 @@ const TopRatedProviders = () => {
   return (
     <div>
       <div className="max-w-[1440px] mx-auto">
-        <h2 className="text-2xl md:text-4xl font-bold my-6 text-center">Top Rated Providers</h2>
+        <h2 className="text-2xl md:text-4xl font-bold my-6 text-center">
+          Top Rated Providers
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://creatorworldd.com/wp-content/uploads/2024/12/FB_IMG_1734106780258-1024x1024.jpg"
               className="w-28 h-28 object-cover rounded-full mx-auto"
@@ -22,7 +24,7 @@ const TopRatedProviders = () => {
             <p className="text-yellow-500 font-semibold mt-1">⭐ 4.9 Rating</p>
           </div>
 
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b"
               className="w-28 h-28 object-cover rounded-full mx-auto"
@@ -37,7 +39,7 @@ const TopRatedProviders = () => {
             <p className="text-yellow-500 font-semibold mt-1">⭐ 4.9 Rating</p>
           </div>
 
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://images.unsplash.com/photo-1615109398623-88346a601842"
               className="w-28 h-28 object-cover rounded-full mx-auto"
@@ -52,7 +54,7 @@ const TopRatedProviders = () => {
             <p className="text-yellow-500 font-semibold mt-1">⭐ 4.8 Rating</p>
           </div>
 
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://images.unsplash.com/photo-1579865346865-9223701ba92e"
               className="w-28 h-28 object-cover rounded-full mx-auto"

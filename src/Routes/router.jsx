@@ -6,10 +6,15 @@ import Profile from "../Pages/Profile";
 import SkillDetails from "../Pages/SkillDetails";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import UpdateProfile from "../Pages/UpdateProfile";
+import PrivateRoute from "./PrivateRoute";
+import ForgotPassword from "../Pages/ForgotPassword";
+import ErrorPage from "../Pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
+    errorElement: <ErrorPage />,
     Component: MainLayout,
     children: [
       {
@@ -22,11 +27,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/profile",
-        Component: Profile,
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/skill/:id",
-        Component: SkillDetails,
+        element: (
+          <PrivateRoute>
+            <SkillDetails />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -35,6 +48,18 @@ const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/forgot-password",
+        Component: ForgotPassword,
+      },
+      {
+        path: "/updateProfile",
+        element: (
+          <PrivateRoute>
+            <UpdateProfile />
+          </PrivateRoute>
+        ),
       },
     ],
   },

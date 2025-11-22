@@ -1,7 +1,6 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router";
-
 const SkillsCard = ({ skill, index }) => {
   const { skillName, price, rating, image, skillId } = skill;
   return (

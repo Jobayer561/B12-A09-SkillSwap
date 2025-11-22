@@ -2,17 +2,26 @@ import React from "react";
 import UseSkill from "../hooks/UseSkill";
 import { Link, useParams } from "react-router";
 import toast from "react-hot-toast";
+import { CircleLoader } from "react-spinners";
+import SkillError from "./SkillError";
 
 const SkillDetails = () => {
   const { id } = useParams();
   const { skills, loading } = UseSkill();
   if (loading) {
-    return <p>Loading...</p>;
+    return (
+      <div className="h-[97vh] flex items-center justify-center">
+        <CircleLoader size={80} color="green" />
+      </div>
+    );
   }
+
   const skill = skills?.find((s) => String(s.skillId) === id);
   console.log(skill);
+  if (!skill) {
+    return <SkillError />;
+  }
   const {
-    skillId,
     skillName,
     providerName,
     providerEmail,
@@ -23,18 +32,7 @@ const SkillDetails = () => {
     image,
     category,
   } = skill || {};
-  console.log(
-    skillId,
-    skillName,
-    providerName,
-    providerEmail,
-    price,
-    rating,
-    slotsAvailable,
-    description,
-    image,
-    category
-  );
+
   const handleBook = (e) => {
     e.preventDefault();
     toast.success("Session Booked Successfully!");
@@ -44,7 +42,7 @@ const SkillDetails = () => {
     <div className="">
       <div className="max-w-[1440px]  mx-auto px-6 py-8  text-gray-950 ">
         <div className="w-full max-w-6xl mx-auto rounded-2xl p-4 overflow-hidden shadow-2xl">
-          <div className="flex flex-col md:flex-row gap-8 ">
+          <div className="flex flex-col lg:flex-row gap-8 ">
             <div className="lg:w-1/2">
               <img
                 src={image}

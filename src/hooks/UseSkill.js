@@ -11,9 +11,8 @@ const UseSkill = () => {
         .then((data) => setSkill(data.data))
         .catch((err) => setError(err))
         .finally(() => setLoading(false));
-    }, 300);
+    }, 500);
   }, []);
   return { skills, loading, error };
 };
 export default UseSkill;
-

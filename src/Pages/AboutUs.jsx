@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const AboutUs = () => {
   return (
@@ -17,7 +18,7 @@ const AboutUs = () => {
         </div>
         <div>
           <h2 className="text-2xl font-semibold text-emerald-700 mb-2">
-            🌍 Our Mission
+            Our Mission
           </h2>
           <p>
             Our mission is to unlock the power of shared knowledge. We aim to
@@ -28,7 +29,7 @@ const AboutUs = () => {
         </div>
         <div>
           <h2 className="text-2xl font-semibold text-emerald-700 mb-2">
-            🤝 How It Works
+            How It Works
           </h2>
           <ul className="list-disc list-inside space-y-2">
             <li>
@@ -47,7 +48,7 @@ const AboutUs = () => {
         </div>
         <div>
           <h2 className="text-2xl font-semibold text-emerald-700 mb-2">
-            💡 Why SkillSwap?
+            Why SkillSwap?
           </h2>
           <ul className="list-disc list-inside space-y-2">
             <li>
@@ -70,15 +71,18 @@ const AboutUs = () => {
         </div>
         <div className="text-center mt-10">
           <h2 className="text-2xl font-bold text-emerald-600">
-            🚀 Ready to Share or Learn?
+            Ready to Share or Learn?
           </h2>
-          <p className="mt-2 text-gray-700">
+          <p className="mt-2 text-gray-700 mb-4">
             Join SkillSwap today and become part of a growing network of
             learners and teachers helping each other grow.
           </p>
-          <button className="mt-4 px-6 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600 hover:scale-105 transition-transform">
+          <Link
+            to={"/"}
+            className="mt-8 px-6 py-2 bg-emerald-500 text-white rounded hover:bg-emerald-600 hover:scale-105 transition-transform"
+          >
             Get Started
-          </button>
+          </Link>
         </div>
       </div>
     </section>

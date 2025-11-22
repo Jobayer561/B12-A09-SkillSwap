@@ -4,10 +4,12 @@ const HowItWork = () => {
   return (
     <div>
       <div className="max-w-[1440px] mx-auto px-2 py-12">
-        <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">How It Works</h2>
+        <h2 className="text-2xl md:text-4xl font-bold text-center mb-10">
+          How It Works
+        </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-center">
-          <div className="p-6 bg-white shadow-md rounded-xl">
+          <div className="p-6 bg-white shadow-md rounded-xl hover:scale-105 transition-transform">
             <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto text-3xl font-bold text-blue-600">
               1
             </div>
@@ -17,7 +19,7 @@ const HowItWork = () => {
             </p>
           </div>
 
-          <div className="p-6 bg-white shadow-md rounded-xl">
+          <div className="p-6 bg-white shadow-md rounded-xl hover:scale-105 transition-transform">
             <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto text-3xl font-bold text-blue-600">
               2
             </div>
@@ -26,7 +28,7 @@ const HowItWork = () => {
               Pick an available slot and reserve your learning session.
             </p>
           </div>
-          <div className="p-6 bg-white shadow-md rounded-xl">
+          <div className="p-6 bg-white shadow-md rounded-xl hover:scale-105 transition-transform">
             <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto text-3xl font-bold text-blue-600">
               3
             </div>
@@ -35,7 +37,7 @@ const HowItWork = () => {
               Attend the session and learn directly from skilled mentors.
             </p>
           </div>
-          <div className="p-6 bg-white shadow-md rounded-xl">
+          <div className="p-6 bg-white shadow-md rounded-xl hover:scale-105 transition-transform">
             <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto text-3xl font-bold text-blue-600">
               4
             </div>

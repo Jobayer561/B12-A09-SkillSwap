@@ -1,8 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
 import logo from "../assets/logo.webp";
+import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
+import { ClockLoader } from "react-spinners";
 const Navbar = () => {
-  let a = 1;
+  const { user, signOutUser, setUser, loading } = useContext(AuthContext);
+  console.log(user);
+
+  const handleSignout = () => {
+    signOutUser()
+      .then(() => {
+        toast.success("Signout successful");
+        setUser(null);
+      })
+      .catch((e) => {
+        toast.error(e.message);
+      });
+  };
   return (
     <div className="bg-white  border-b-2 border-gray-300">
       <div className="navbar max-w-[1460px] mx-auto px-4">
@@ -40,7 +55,7 @@ const Navbar = () => {
             </ul>
           </div>
           <div className="flex gap-1">
-            <Link className="/">
+            <Link to={"/"} className="/">
               <img className="w-6 h-6 sm:w-10 sm:h-10 " src={logo} alt="" />
             </Link>
             <Link
@@ -66,19 +81,31 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end gap-2">
-          {a ? (
+          {loading ? (
+            <ClockLoader className="mr-12" color="green" />
+          ) : user ? (
             <>
-              <img
-                className="rounded-full w-12 h-12 bg-red-500"
-                src=""
-                alt=""
-              />
-              <Link className="btn bg-secondary text-white">Sign Out</Link>
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={user?.displayName}
+              >
+                <img className="rounded-full w-12 h-12" src={user?.photoURL} />
+              </div>
+              <button
+                onClick={handleSignout}
+                className="btn bg-secondary text-white"
+              >
+                Sign Out
+              </button>
             </>
           ) : (
             <div className="flex gap-2">
-              <Link class="btn btn-secondary">LogIn</Link>
-              <Link className="btn btn-accent text-white">Sign Up</Link>
+              <Link to={"/login"} class="btn btn-secondary">
+                LogIn
+              </Link>
+              <Link to={"/register"} className="btn btn-accent text-white">
+                SignUp
+              </Link>
             </div>
           )}
         </div>

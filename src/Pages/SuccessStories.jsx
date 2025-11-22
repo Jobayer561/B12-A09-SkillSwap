@@ -9,7 +9,7 @@ const SuccessStories = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://images.pexels.com/photos/3027243/pexels-photo-3027243.jpeg"
               className="w-28 h-28 object-cover rounded-full mx-auto"
@@ -31,7 +31,7 @@ const SuccessStories = () => {
             </p>
           </div>
 
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg"
               className="w-28 h-28 object-cover rounded-full mx-auto"
@@ -51,7 +51,7 @@ const SuccessStories = () => {
             </p>
           </div>
 
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg"
               className="w-28 h-28 object-cover rounded-full mx-auto"
@@ -72,7 +72,7 @@ const SuccessStories = () => {
             </p>
           </div>
 
-          <div className="bg-white shadow-md rounded-xl p-6 text-center">
+          <div className="bg-white shadow-md rounded-xl p-6 text-center hover:scale-105 transition-transform">
             <img
               src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg"
               className="w-28 h-28 object-cover rounded-full mx-auto"

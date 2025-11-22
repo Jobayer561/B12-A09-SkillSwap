@@ -1,7 +1,55 @@
-import React from "react";
-import { Link } from "react-router";
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
+import { FaEye } from "react-icons/fa";
+import { IoEyeOff } from "react-icons/io5";
 
 const Login = () => {
+  const [show, setShow] = useState(false);
+  const [email, setEmail] = useState("");
+  const { SignInUser, signInWithGoogle, setUser, setLoading } =
+    useContext(AuthContext);
+  const location = useLocation();
+  const from = location.state || "/";
+  const navigate = useNavigate();
+
+  const handleSignin = (e) => {
+    e.preventDefault();
+
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email, password);
+    SignInUser(email, password)
+      .then((res) => {
+        setLoading(false);
+        console.log(res);
+        setUser(res.user);
+        navigate(from);
+        toast.success("Login successful");
+        e.target.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+  };
+  const handleGoogleSignin = () => {
+    setLoading(true);
+    signInWithGoogle()
+      .then((res) => {
+        console.log(res);
+        setUser(res.user);
+        toast.success("Google signin successful");
+        setLoading(false);
+        navigate(from);
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+  };
+
   return (
     <div>
       <div
@@ -13,14 +61,13 @@ const Login = () => {
             <h1 className="text-2xl font-bold mt-2 ">Login</h1>
           </div>
 
-          <form>
+          <form onSubmit={handleSignin}>
             <div className="mb-3 ">
-              <label className="  text-sm  font-semibold">
-                Email
-              </label>
+              <label className="  text-sm  font-semibold">Email</label>
               <input
                 type="text"
                 name="email"
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="example@gmail.com"
                 required
                 className="w-full px-5 py-3 rounded-xl border border-gray-100 shadow-md  focus:outline-none "
@@ -28,28 +75,30 @@ const Login = () => {
             </div>
 
             <div className="relative mb-3">
-              <label className="  text-sm font-semibold">
-                Password
-              </label>
+              <label className="  text-sm font-semibold">Password</label>
               <input
-                // type={show ? "text" : "password"}
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="••••••••"
                 required
                 className="w-full px-5 py-3 rounded-xl border border-gray-100  shadow-md  focus:outline-none"
               />
               <span
-                // onClick={() => setShow(!show)}
+                onClick={() => setShow(!show)}
                 className="absolute right-4 top-10 cursor-pointer "
               >
-                {/* {show ? <FaEye /> : <IoEyeOff />} */}
+                {show ? <FaEye /> : <IoEyeOff />}
               </span>
             </div>
 
             <div className="flex justify-between items-center font-semibold text-sm mb-6">
-              <a href="#" className=" hover:text-green-500">
+              <Link
+                state={email}
+                to={"/forgot-password"}
+                className=" hover:text-green-500"
+              >
                 Forgot password?
-              </a>
+              </Link>
             </div>
 
             <button
@@ -66,7 +115,10 @@ const Login = () => {
             </div>
 
             <div className="flex justify-center gap-4">
-              <button className="btn    w-full h-12 shadow-lg hover:shadow-xl  border border-gray-100 rounded-xl hover:scale-105 hover:bg-green-500  bg-white  ">
+              <button
+                onClick={handleGoogleSignin}
+                className="btn    w-full h-12 shadow-lg hover:shadow-xl  border border-gray-100 rounded-xl hover:scale-105 hover:bg-green-500  bg-white  "
+              >
                 <svg
                   aria-label="Google logo"
                   width="16"

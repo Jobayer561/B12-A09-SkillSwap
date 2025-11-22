@@ -1,7 +1,92 @@
-import React from "react";
-import { Link } from "react-router";
-
+/* eslint-disable no-unused-vars */
+import React, { useContext, useState } from "react";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router";
+import { AuthContext } from "../Context/AuthContext";
+import { FaEye } from "react-icons/fa";
+import { IoEyeOff } from "react-icons/io5";
+import { auth } from "../firebase/firebase.config";
 const Register = () => {
+  const [show, setShow] = useState(false);
+  const [error, setError] = useState("");
+  const {
+    createUser,
+    updateProfileFunc,
+    signInWithGoogle,
+    setUser,
+    setLoading,
+  } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const displayName = e.target.name?.value;
+    const photoURL = e.target.photo?.value;
+    const email = e.target.email?.value;
+    const password = e.target.password?.value;
+    console.log(displayName, photoURL, email, password);
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordPattern.test(password)) {
+      setError(
+        "Password must be at least 6 characters long and include at least one uppercase letter, one lowercase letter"
+      );
+      return;
+    }
+    setError("");
+    createUser(email, password)
+      .then((res) => {
+        updateProfileFunc(displayName, photoURL)
+          .then(() => {
+            setUser({ ...auth.currentUser });
+            toast.success("Registration Successful");
+            e.target.reset();
+            setLoading(false);
+            navigate("/");
+          })
+          .catch((err) => {
+            toast.error(err.message);
+          });
+      })
+      .catch((e) => {
+        if (e.code === "auth/email-already-in-use") {
+          toast.error("User already exists in the database.");
+        } else if (e.code === "auth/weak-password") {
+          toast.error(
+            "You password should be 6 character long and must contain one uppercase & lowercase letter"
+          );
+        } else if (e.code === "auth/invalid-email") {
+          toast.error("Invalid email format. Please check your email.");
+        } else if (e.code === "auth/user-not-found") {
+          toast.error("User not found. Please sign up first.");
+        } else if (e.code === "auth/wrong-password") {
+          toast.error("Wrong password. Please try again.");
+        } else if (e.code === "auth/user-disabled") {
+          toast.error("This user account has been disabled.");
+        } else if (e.code === "auth/too-many-requests") {
+          toast.error("Too many attempts. Please try again later.");
+        } else if (e.code === "auth/operation-not-allowed") {
+          toast.error("Operation not allowed. Please contact support.");
+        } else if (e.code === "auth/network-request-failed") {
+          toast.error("Network error. Please check your connection.");
+        } else {
+          toast.error(e.message || "An unexpected error occurred.");
+        }
+      });
+  };
+  const handleGoogleSignin = () => {
+    signInWithGoogle()
+      .then((res) => {
+        console.log(res);
+        setLoading(false);
+        setUser(res.user);
+        toast.success("Google signin successful");
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error(err.message);
+      });
+  };
   return (
     <div>
       {" "}
@@ -14,12 +99,10 @@ const Register = () => {
             <h1 className="text-2xl font-bold mt-2 primary">Register</h1>
           </div>
 
-          <form >
+          <form onSubmit={handleRegister}>
             {" "}
             <div className="mb-3 ">
-              <label className=" font-semibold text-sm  ">
-                Name
-              </label>
+              <label className=" font-semibold text-sm  ">Name</label>
               <input
                 type="text"
                 name="name"
@@ -29,9 +112,7 @@ const Register = () => {
               />
             </div>{" "}
             <div className="mb-3 ">
-              <label className=" text-sm font-semibold ">
-                PhotoURL
-              </label>
+              <label className=" text-sm font-semibold ">PhotoURL</label>
               <input
                 type="text"
                 name="photoURL"
@@ -41,9 +122,7 @@ const Register = () => {
               />
             </div>
             <div className="mb-3 ">
-              <label className="  text-sm   font-semibold">
-                Email
-              </label>
+              <label className="  text-sm   font-semibold">Email</label>
               <input
                 type="text"
                 name="email"
@@ -53,21 +132,19 @@ const Register = () => {
               />
             </div>
             <div className="relative mb-3">
-              <label className="text-sm font-semibold">
-                Password
-              </label>
+              <label className="text-sm font-semibold">Password</label>
               <input
-                // type={show ? "text" : "password"}
+                type={show ? "text" : "password"}
                 name="password"
                 placeholder="••••••••"
                 required
                 className="w-full px-5 py-3 rounded-md  shadow-md border border-gray-100 focus:outline-none"
               />
               <span
-                // onClick={() => setShow(!show)}
+                onClick={() => setShow(!show)}
                 className="absolute right-4 top-10 cursor-pointer "
               >
-                {/* {show ? <FaEye /> : <IoEyeOff />} */}
+                {show ? <FaEye /> : <IoEyeOff />}
               </span>
             </div>
             <button
@@ -83,7 +160,7 @@ const Register = () => {
             </div>
             <div className="flex justify-center gap-4">
               <button
-                // onClick={handleGoogleSignin}
+                onClick={handleGoogleSignin}
                 className="btn border-none w-full h-12 shadow-lg hover:shadow-xl  rounded-md hover:scale-105  bg-white hover:bg-green-500 "
               >
                 <svg
@@ -125,7 +202,7 @@ const Register = () => {
                 Login
               </Link>
             </p>
-            {/* {error && <p className="text-red-600 my-2">{error}</p>} */}
+            {error && <p className="text-red-600 my-2">{error}</p>}
           </form>
         </div>
       </div>
