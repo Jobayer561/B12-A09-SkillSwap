@@ -115,7 +115,7 @@ const Register = () => {
               <label className=" text-sm font-semibold ">PhotoURL</label>
               <input
                 type="text"
-                name="photoURL"
+                name="photo"
                 placeholder="Enter Your PhotoURL"
                 required
                 className="w-full px-5 py-3 rounded-md  shadow-md border border-gray-100 focus:outline-none "
@@ -147,6 +147,7 @@ const Register = () => {
                 {show ? <FaEye /> : <IoEyeOff />}
               </span>
             </div>
+            {error && <p className="text-red-600 my-2">{error}</p>}
             <button
               type="submit"
               className="w-full mt-3 py-3 rounded-md hover:bg-green-500  font-semibold   shadow-lg hover:shadow-xl hover:scale-105 "
@@ -202,7 +203,6 @@ const Register = () => {
                 Login
               </Link>
             </p>
-            {error && <p className="text-red-600 my-2">{error}</p>}
           </form>
         </div>
       </div>

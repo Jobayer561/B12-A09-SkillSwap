@@ -4,7 +4,6 @@ import { AuthContext } from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { IoEyeOff } from "react-icons/io5";
-
 const Login = () => {
   const [show, setShow] = useState(false);
   const [email, setEmail] = useState("");
@@ -13,7 +12,6 @@ const Login = () => {
   const location = useLocation();
   const from = location.state || "/";
   const navigate = useNavigate();
-
   const handleSignin = (e) => {
     e.preventDefault();
 
