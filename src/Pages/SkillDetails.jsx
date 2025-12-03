@@ -51,7 +51,7 @@ const SkillDetails = () => {
               />
             </div>
 
-            <div className="lg:w-1/2 mt-8 md:mt-0 rounded-2xl p-6">
+            <div className="lg:w-1/2 mt-8 md:mt-0 rounded-2xl p-4">
               <h1 className="text-2xl md:text-4xl font-bold text-center primary mb-4 animate-pulse">
                 {skillName}
               </h1>
@@ -74,8 +74,8 @@ const SkillDetails = () => {
                   {providerName}
                 </p>
                 <p>
-                  <span className="font-bold text-indigo-500 whitespace-nowrap">
-                    ProviderEmail :{" "}
+                  <span className="font-bold text-indigo-500 ">
+                    Email :{" "}
                   </span>{" "}
                   {providerEmail}
                 </p>
