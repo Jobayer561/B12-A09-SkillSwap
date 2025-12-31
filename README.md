@@ -1,67 +1,75 @@
-# Skill Swap
+# 🔁 Skill Swap — Learn, Share & Grow Skills
 
-Skill Swap is a modern skill-sharing platform where users can explore different skills, view detailed information, and manage their profiles. It uses Firebase authentication and offers a clean, responsive UI with smooth interactions.
+![Skill Swap Banner](./src/assets/DemoImage.png)
 
 ---
 
 ## 🚀 Live Demo
-
-🔗 **Live URL:** https://b12-a9-skillswap.netlify.app
+🔗 https://b12-a9-skillswap.netlify.app
 
 ---
 
-## 📌 Purpose of the Project
+## 📌 Project Overview
 
-The project is built to help learners discover new skills and gain knowledge. It includes a user system with login, registration, profile updates, and password recovery.
+**Skill Swap** is a modern skill-sharing platform where users can explore different skills, view detailed information, and manage their personal profiles.
+
+The platform focuses on helping learners **discover, learn, and grow** through a clean UI, smooth interactions, and secure authentication using Firebase.
+
+---
+
+## 🎯 Purpose of the Project
+
+The main goals of **Skill Swap** are:
+
+- Help users discover new skills easily
+- Provide detailed skill information
+- Enable secure user authentication
+- Allow users to manage their profiles
+- Deliver a smooth and responsive UI experience
 
 ---
 
 ## ⭐ Key Features
 
 ### 🔹 Skill Cards
-
-- Shows skill cards with images, price, rating, and skill name.
-- Each card contains a **View Details** button.
+- Displays skills with image, price, rating, and title
+- Each card includes a **View Details** button
 
 ### 🔹 Skill Details Page
-
-- Displays detailed information when a user selects a skill.
+- Shows full details of the selected skill
+- Clean and readable layout
 
 ### 🔹 User Authentication
-
-- Login and Registration
+- Login & Registration
 - Forgot Password
-- Update Profile
-- Firebase Email & Password Auth
+- Firebase Email & Password Authentication
 
 ### 🔹 User Profile
-
 - View profile picture, name, and email
-- Edit and update profile
+- Update profile information
 
 ### 🔹 UI / UX Enhancements
-
 - Fully responsive (Mobile, Tablet, Desktop)
 - Swiper slider on homepage
 - Loading spinners
 - Toast notifications
-- Animations with animate.css
+- Smooth animations with Animate.css
 
 ---
 
 ## 🛠️ Tech Stack
 
-### **Frontend**
-
+### Frontend
 - React
 - React Router
 - Tailwind CSS
-- DaisyUI (if used)
+- DaisyUI
 - Animate.css
 - Swiper.js
+- React Icons
+- React Hot Toast
 
-### **Backend Services**
-
+### Backend / Services
 - Firebase Authentication
 - Firebase Hosting (optional)
 
@@ -69,16 +77,51 @@ The project is built to help learners discover new skills and gain knowledge. It
 
 ## 📦 NPM Packages Used
 
-- "@tailwindcss/vite": "^4.1.16"
-- "animate.css": "^4.1.1"
-- "axios": "^1.13.1"
-- "firebase": "^12.6.0"
-- "icons": "^1.0.0"
-- "react": "^19.2.0"
-- "react-dom": "^19.1.1"
-- "react-hot-toast": "^2.6.0"
-- "react-icons": "^5.5.0"
-- "react-router": "^7.9.5"
-- "react-spinners": "^0.17.0"
-- "swiper": "^12.0.3"
-- "tailwindcss": "^4.1.16"
+- `@tailwindcss/vite`
+- `animate.css`
+- `axios`
+- `firebase`
+- `react`
+- `react-dom`
+- `react-hot-toast`
+- `react-icons`
+- `react-router`
+- `react-spinners`
+- `swiper`
+- `tailwindcss`
+
+---
+
+## 📄 Pages in the Application
+
+- `Home.jsx` — Hero section, skill slider, featured skills
+- `Skills.jsx` — All skill listings
+- `SkillDetails.jsx` — Single skill details
+- `Login.jsx`
+- `Register.jsx`
+- `Profile.jsx` — User profile management
+- `Error404.jsx`
+
+---
+
+## 🧑‍💻 Getting Started
+
+Follow these steps to run **Skill Swap** locally.
+
+---
+
+### ✅ Prerequisites
+
+Make sure you have installed:
+- Node.js (v18+ recommended)
+- npm or yarn
+
+---
+
+### 🔧 Installation
+
+```bash
+git clone https://github.com/Jobayer561/B12-A09-SkillSwap.git
+cd SkillSwap
+npm install
+npm run dev
